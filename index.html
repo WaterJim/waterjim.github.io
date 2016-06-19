@@ -224,9 +224,31 @@
 </li>
 </ul>
 <ul>
-<li><h4 id="在Eclipse中安装Subclipse"><a href="#在Eclipse中安装Subclipse" class="headerlink" title="在Eclipse中安装Subclipse"></a>在Eclipse中安装Subclipse</h4></li>
+<li><h4 id="在Eclipse中安装Subclipse"><a href="#在Eclipse中安装Subclipse" class="headerlink" title="在Eclipse中安装Subclipse"></a>在Eclipse中安装Subclipse</h4>打开Eclipse，选择Help——-&gt;Eclipse Markplace,搜索”subclipse”<br>根据提示安装完成后重启即可。（有弹窗提示的只要选择确认即可）</li>
 </ul>
-<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><h2 id="主线与分支管理"><a href="#主线与分支管理" class="headerlink" title="主线与分支管理"></a>主线与分支管理</h2><h2 id="工作流样例"><a href="#工作流样例" class="headerlink" title="工作流样例"></a>工作流样例</h2>
+<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><ul>
+<li><h4 id="显示版本资源库窗口，添加远程版本库"><a href="#显示版本资源库窗口，添加远程版本库" class="headerlink" title="显示版本资源库窗口，添加远程版本库"></a>显示版本资源库窗口，添加远程版本库</h4></li>
+<li><h4 id="添加文件，并且提交到版本库当中"><a href="#添加文件，并且提交到版本库当中" class="headerlink" title="添加文件，并且提交到版本库当中"></a>添加文件，并且提交到版本库当中</h4></li>
+<li><h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4></li>
+<li><h4 id="解决代码冲突"><a href="#解决代码冲突" class="headerlink" title="解决代码冲突"></a>解决代码冲突</h4></li>
+</ul>
+<h2 id="主线与分支管理"><a href="#主线与分支管理" class="headerlink" title="主线与分支管理"></a>主线与分支管理</h2><ul>
+<li><h4 id="创建分支，切换到分支"><a href="#创建分支，切换到分支" class="headerlink" title="创建分支，切换到分支"></a>创建分支，切换到分支</h4></li>
+<li><h4 id="将主干代码合并到分支"><a href="#将主干代码合并到分支" class="headerlink" title="将主干代码合并到分支"></a>将主干代码合并到分支</h4></li>
+<li><h4 id="将分支代码合并到主干"><a href="#将分支代码合并到主干" class="headerlink" title="将分支代码合并到主干"></a>将分支代码合并到主干</h4></li>
+</ul>
+<h2 id="工作流样例"><a href="#工作流样例" class="headerlink" title="工作流样例"></a>工作流样例</h2><p>假设你必须添加了一个特性至一个项目，且这个项目是受版本控制的，你差不多需要完成如下几个步骤：</p>
+<ol>
+<li>使用SVNcheckout或者SVNswitch从这个项目的trunk获得一个新的工作拷贝（branch）</li>
+<li>使用SVN切换至新的branch</li>
+<li>完成新特性的开发（当然，要做足够的测试，包括在开始编码前）</li>
+<li>一旦这个特性完成并且稳定（已提交），并经过你的同事们确认，切换至trunk</li>
+<li>合并你的分支至你的工作拷贝（trunk），并且解决一系列的冲突</li>
+<li>重新检查合并后的代码</li>
+<li>如果可能的话，麻烦你的同事对你所编写、更改的代码进行一次复查（review）</li>
+<li>提交合并后的工作拷贝至trunk</li>
+</ol>
+
         
       </div>
       <div class="post-footer clearfix">
