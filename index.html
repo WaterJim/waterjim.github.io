@@ -213,7 +213,8 @@
       </div>
       <div class="post-content" itemprop="postContent" >
         
-          
+          <h2 id="隐藏状态栏及虚拟键"><a href="#隐藏状态栏及虚拟键" class="headerlink" title="隐藏状态栏及虚拟键"></a>隐藏状态栏及虚拟键</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; <span class="number">14</span>) <span class="keyword">return</span>; </span><br><span class="line">mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE </span><br><span class="line">    | View.SYSTEM_UI_FLAG_FULLSCREEN </span><br><span class="line">    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE </span><br><span class="line">    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY </span><br><span class="line">    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION </span><br><span class="line">    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);</span><br></pre></td></tr></table></figure>
+
         
       </div>
       <div class="post-footer clearfix">

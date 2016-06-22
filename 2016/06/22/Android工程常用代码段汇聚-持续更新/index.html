@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="Android">
-  <meta name="description" content="快乐生活，尽情游戏">
+  <meta name="description" content="隐藏状态栏及虚拟键1234567if (Build.VERSION.SDK_INT &amp;lt; 14) return; mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE     | View.SYSTEM_UI_FLAG_FULLSCREEN     | View.SYSTEM_UI_FLAG_LAYOUT_STAB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android工程常用代码段汇聚(持续更新)">
 <meta property="og:url" content="http://yoursite.com/2016/06/22/Android工程常用代码段汇聚-持续更新/index.html">
 <meta property="og:site_name" content="WaterJim's Blog">
-<meta property="og:description" content="快乐生活，尽情游戏">
-<meta property="og:updated_time" content="2016-06-22T14:12:59.523Z">
+<meta property="og:description" content="隐藏状态栏及虚拟键1234567if (Build.VERSION.SDK_INT &amp;lt; 14) return; mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE     | View.SYSTEM_UI_FLAG_FULLSCREEN     | View.SYSTEM_UI_FLAG_LAYOUT_STAB">
+<meta property="og:updated_time" content="2016-06-22T14:45:13.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android工程常用代码段汇聚(持续更新)">
-<meta name="twitter:description" content="快乐生活，尽情游戏">
+<meta name="twitter:description" content="隐藏状态栏及虚拟键1234567if (Build.VERSION.SDK_INT &amp;lt; 14) return; mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE     | View.SYSTEM_UI_FLAG_FULLSCREEN     | View.SYSTEM_UI_FLAG_LAYOUT_STAB">
   
     <link rel="alternative" href="/atom.xml" title="WaterJim&#39;s Blog" type="application/atom+xml">
   
@@ -166,14 +166,15 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#隐藏状态栏及虚拟键"><span class="post-toc-text">隐藏状态栏及虚拟键</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"></div>
+            <div class="post-content" itemprop="postContent"><h2 id="隐藏状态栏及虚拟键"><a href="#隐藏状态栏及虚拟键" class="headerlink" title="隐藏状态栏及虚拟键"></a>隐藏状态栏及虚拟键</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; <span class="number">14</span>) <span class="keyword">return</span>; </span><br><span class="line">mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE </span><br><span class="line">    | View.SYSTEM_UI_FLAG_FULLSCREEN </span><br><span class="line">    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE </span><br><span class="line">    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY </span><br><span class="line">    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION </span><br><span class="line">    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);</span><br></pre></td></tr></table></figure>
+</div>
 
             
 <nav class="post-nav flex-row">
