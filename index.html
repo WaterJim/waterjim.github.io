@@ -295,9 +295,11 @@
 </ul>
 <h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><ul>
 <li><h4 id="显示版本资源库窗口，添加远程版本库"><a href="#显示版本资源库窗口，添加远程版本库" class="headerlink" title="显示版本资源库窗口，添加远程版本库"></a>显示版本资源库窗口，添加远程版本库</h4>Window ————&gt; Show View ————&gt; Other ————-&gt;  SVN<img src="/2016/06/19/Eclipse中的subclipse-SVN/repo.png" alt="This is an example image" title="This is an example image"></li>
-<li><h4 id="添加文件，并且提交到版本库当中"><a href="#添加文件，并且提交到版本库当中" class="headerlink" title="添加文件，并且提交到版本库当中"></a>添加文件，并且提交到版本库当中</h4></li>
+<li><h4 id="添加文件，并且提交到版本库当中"><a href="#添加文件，并且提交到版本库当中" class="headerlink" title="添加文件，并且提交到版本库当中"></a>添加文件，并且提交到版本库当中</h4><p>右键Project ————–&gt; Team —————–&gt;提交</p>
+</li>
 <li><h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4></li>
-<li><h4 id="解决代码冲突"><a href="#解决代码冲突" class="headerlink" title="解决代码冲突"></a>解决代码冲突</h4></li>
+<li><h4 id="解决代码冲突"><a href="#解决代码冲突" class="headerlink" title="解决代码冲突"></a>解决代码冲突</h4><p>右键发生冲突的文件————&gt; 编辑冲突<br>修改好冲突后右键冲突文件————&gt; 标记解决</p>
+</li>
 </ul>
 <h2 id="主线与分支管理"><a href="#主线与分支管理" class="headerlink" title="主线与分支管理"></a>主线与分支管理</h2><ul>
 <li><h4 id="常见SVN仓库目录介绍"><a href="#常见SVN仓库目录介绍" class="headerlink" title="常见SVN仓库目录介绍"></a>常见SVN仓库目录介绍</h4><p>1.–Trunka<br>SVN组成Trunka，Trunk是放置稳定代码的主要环境，就好像一个汽车工厂，负责将成品的汽车零件组装在一起。<br>除非你必须处理一些容易且能迅速解决的BUG，或者你必须添加一些无关逻辑的文件（比如媒体文件：图像，视频，CSS等等），否则永远不要在trunk直接做开发<br>不要因为特殊的需求而去对先前的版本做太大的改变，如何相关的情况都意味着需要建立一个branch（如下所述）<br>不要提交一些可能破坏trunk的内容，例如从branch合并。<br>2.–Branches<br>SVN组成branches，一个branch就是从一个SVN仓库中的子树所作的一份普通拷贝。通常情况它的工作类似与UNIX系统上的符号链接，但是你一旦在一个SVNbranch里修改了一些文件，并且这些被修改的文件从拷贝过来的源文件独立发展，就不能这么认为了。当一个branch完成了，并且认为它足够稳定的时候，它必须合并回它原来的拷贝的地方，也就是说：如果原来是从trunk中拷贝的，就应该回到trunk去，或者合并回它原来拷贝的父级branch。<br>如果你需要修改你的应用程序，或者为它开发一个新的特性，请从trunk中创建一个新的branch，然后基于这个新的分支进行开发<br>除非是因为必须从一个branch中创建一个新的子branch，否则新的branch必须从trunk创建<br>当你创建了一个新branch，你应当立即切换过去。如果你没有这么做，那你为什么要在最初的地方创建这个分支呢？<br>3.–Tags<br>SVN组成Tags。从表面上看，SVNbranches和SVNtags没有什么差别，但是从概念上来说，它们有许多差别。其实一个SVNtags就是项目的里程碑。</p>
