@@ -20,7 +20,10 @@ An Eclipse Team Provider plug-in providing suppo">
 
 An Eclipse Team Provider plug-in providing suppo">
 <meta property="og:image" content="http://yoursite.com/2016/06/19/Eclipse中的subclipse-SVN/check.png">
-<meta property="og:updated_time" content="2016-06-22T13:12:40.929Z">
+<meta property="og:image" content="http://yoursite.com/2016/06/19/Eclipse中的subclipse-SVN/repo.png">
+<meta property="og:image" content="http://yoursite.com/2016/06/19/Eclipse中的subclipse-SVN/merge_type1.png">
+<meta property="og:image" content="http://yoursite.com/2016/06/19/Eclipse中的subclipse-SVN/merge_from1.png">
+<meta property="og:updated_time" content="2016-06-22T13:27:47.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse中的subclipse(SVN)">
 <meta name="twitter:description" content="Subclipse介绍正如Win端的TortoiseSVN一样，Subclipse是Eclipse上最常用的提供SVN版本控制管理插件。使用该插件便可以对项目版本控制库进行相应的操作，如代码更新，提交,版本回退以及分支创建与合并，建立项目里程碑等等操作。下面是一段官方关于Subclipse的介绍：
@@ -202,7 +205,7 @@ An Eclipse Team Provider plug-in providing suppo">
 <li><h4 id="在Eclipse中安装Subclipse"><a href="#在Eclipse中安装Subclipse" class="headerlink" title="在Eclipse中安装Subclipse"></a>在Eclipse中安装Subclipse</h4>打开Eclipse，选择Help——-&gt;Eclipse Markplace,搜索”subclipse”<br>根据提示安装完成后重启即可。（有弹窗提示的只要选择确认即可）</li>
 </ul>
 <h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><ul>
-<li><h4 id="显示版本资源库窗口，添加远程版本库"><a href="#显示版本资源库窗口，添加远程版本库" class="headerlink" title="显示版本资源库窗口，添加远程版本库"></a>显示版本资源库窗口，添加远程版本库</h4></li>
+<li><h4 id="显示版本资源库窗口，添加远程版本库"><a href="#显示版本资源库窗口，添加远程版本库" class="headerlink" title="显示版本资源库窗口，添加远程版本库"></a>显示版本资源库窗口，添加远程版本库</h4>Window ————&gt; Show View ————&gt; Other ————-&gt;  SVN<img src="/2016/06/19/Eclipse中的subclipse-SVN/repo.png" alt="This is an example image" title="This is an example image"></li>
 <li><h4 id="添加文件，并且提交到版本库当中"><a href="#添加文件，并且提交到版本库当中" class="headerlink" title="添加文件，并且提交到版本库当中"></a>添加文件，并且提交到版本库当中</h4></li>
 <li><h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4></li>
 <li><h4 id="解决代码冲突"><a href="#解决代码冲突" class="headerlink" title="解决代码冲突"></a>解决代码冲突</h4></li>
@@ -212,7 +215,11 @@ An Eclipse Team Provider plug-in providing suppo">
 </li>
 <li><h4 id="创建分支，切换到分支"><a href="#创建分支，切换到分支" class="headerlink" title="创建分支，切换到分支"></a>创建分支，切换到分支</h4><p>有些时候，根据业务需要，我们需要从项目主干上创建独立的分支。<br>比如项目demo下有两个小组，svn下有一个trunk版。由于客户需求突然变化，导致项目需要做较大改动，此时项目组决定由小组1继续完成原来正进行到一半的工作(某个模块)，小组2进行新需求的开发。那么此时，我们就可以为小组2建立一个分支，分支其实就是trunk版(主干线)的一个copy版，不过分支也是具有版本控制功能的，而且是和主干线相互独立的，当然，到最后我们可以通过[合并]功能，将分支合并到trunk上来，从而最后合并为一个项目。 </p>
 </li>
-<li><h4 id="将主干代码合并到分支"><a href="#将主干代码合并到分支" class="headerlink" title="将主干代码合并到分支"></a>将主干代码合并到分支</h4><strong>当我们在branch中完成了业务需求功能开发，在将分支代码合并到主干之前，需要将主干代码合并到当前分支，以防主干版本与该分支初期版本相差太远。</strong><br>操作如下：<br>切换到当前分支——-&gt;Team——&gt;合并</li>
+<li><h4 id="将主干代码合并到分支"><a href="#将主干代码合并到分支" class="headerlink" title="将主干代码合并到分支"></a>将主干代码合并到分支</h4><p><strong>当我们在branch中完成了业务需求功能开发，在将分支代码合并到主干之前，需要将主干代码合并到当前分支，以防主干版本与该分支初期版本相差太远。</strong><br>操作如下：<br>切换到当前分支——-&gt;Team——&gt;合并</p>
+<img src="/2016/06/19/Eclipse中的subclipse-SVN/merge_type1.png" alt="This is an example image" title="This is an example image">
+<p>这里的来源选择主干</p>
+<img src="/2016/06/19/Eclipse中的subclipse-SVN/merge_from1.png" alt="This is an example image" title="This is an example image">
+</li>
 <li><h4 id="将分支代码合并到主干"><a href="#将分支代码合并到主干" class="headerlink" title="将分支代码合并到主干"></a>将分支代码合并到主干</h4><p>操作如下：<br>切换到当前主干——&gt;Team——&gt;合并</p>
 </li>
 </ul>
