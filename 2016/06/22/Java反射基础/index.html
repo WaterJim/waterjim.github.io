@@ -7,16 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="Java,reflect">
-  <meta name="description" content="快乐生活，尽情游戏">
+  <meta name="description" content="Java反射的概念Java反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为Java语言的反射机制。有不少Java Web便是利用反射机制实现了强大功能，如Spring。
+Java反射机制主要提供下面几种用途：
+
+在运行时判断任意一个对象所属的类
+在运行时构造任意一个类的对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java反射基础">
 <meta property="og:url" content="http://yoursite.com/2016/06/22/Java反射基础/index.html">
 <meta property="og:site_name" content="WaterJim's Blog">
-<meta property="og:description" content="快乐生活，尽情游戏">
-<meta property="og:updated_time" content="2016-06-22T14:14:11.010Z">
+<meta property="og:description" content="Java反射的概念Java反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为Java语言的反射机制。有不少Java Web便是利用反射机制实现了强大功能，如Spring。
+Java反射机制主要提供下面几种用途：
+
+在运行时判断任意一个对象所属的类
+在运行时构造任意一个类的对">
+<meta property="og:updated_time" content="2016-06-25T14:35:27.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java反射基础">
-<meta name="twitter:description" content="快乐生活，尽情游戏">
+<meta name="twitter:description" content="Java反射的概念Java反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为Java语言的反射机制。有不少Java Web便是利用反射机制实现了强大功能，如Spring。
+Java反射机制主要提供下面几种用途：
+
+在运行时判断任意一个对象所属的类
+在运行时构造任意一个类的对">
   
     <link rel="alternative" href="/atom.xml" title="WaterJim&#39;s Blog" type="application/atom+xml">
   
@@ -166,14 +178,47 @@
 
           
           <nav class="post-toc-wrap" id="post-toc">
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java反射的概念"><span class="post-toc-text">Java反射的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射涉及的主要的类与作用"><span class="post-toc-text">反射涉及的主要的类与作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射实例"><span class="post-toc-text">反射实例</span></a></li></ol>
           </nav>
           
         </aside>
 
         <div class="post-main">
 
-            <div class="post-content" itemprop="postContent"></div>
+            <div class="post-content" itemprop="postContent"><h2 id="Java反射的概念"><a href="#Java反射的概念" class="headerlink" title="Java反射的概念"></a>Java反射的概念</h2><p>Java反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为Java语言的反射机制。有不少Java Web便是利用反射机制实现了强大功能，如Spring。</p>
+<p>Java反射机制主要提供下面几种用途：</p>
+<ul>
+<li>在运行时判断任意一个对象所属的类</li>
+<li>在运行时构造任意一个类的对象</li>
+<li>在运行时判断任意一个类所具有的成员变量和方法</li>
+<li>在运行时调用任意一个对象的方法</li>
+<li>在运行时修改变量的应用对象</li>
+<li>在运行时实现hook</li>
+</ul>
+<h2 id="反射涉及的主要的类与作用"><a href="#反射涉及的主要的类与作用" class="headerlink" title="反射涉及的主要的类与作用"></a>反射涉及的主要的类与作用</h2><p>Class类与java.lang.reflect类库一起对反射的概念进行了支持，该类库包含了Field，Method以及Constructor类（每个类都实现了Methods）。这些类型的对象是由JVM在运行时创建的，用以表示未知类里面的对应的成员。这样，匿名对象的类信息就能在运行时被完全确定下来，而在编译时不需要知道任何事情。下面主要介绍下涉及到反射的主要的类与接口。</p>
+<ul>
+<li>Class：它表示正在运行的Java应用程序中的类和接口</li>
+<li>Field：提供有关类或接口的属性信息，以及对它的动态访问权限</li>
+<li>Constructor：提供关于类的单个构造方法的信息以及对它的访问权限</li>
+<li>Method：提供关于类或接口中某个方法信息</li>
+<li>Proxy：</li>
+<li>InvocationHandler：</li>
+</ul>
+<h2 id="反射实例"><a href="#反射实例" class="headerlink" title="反射实例"></a>反射实例</h2><p>因为可能涉及到一些相关的重复示例代码，这里就先行给出。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> field1;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> field2;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ReflectSample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ReflectSample</span><span class="params">(<span class="keyword">int</span> arg1, <span class="keyword">int</span> arg2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用java的反射机制，一般需要遵循三步：</p>
+<p>1.获得你想操作类的Class对象<br>2.通过第一步获得的Class对象去取得操作类的方法或是属性名<br>3.操作第二步取得的方法或是属性</p>
+<p>Java运行的时候，某个类无论生成多少个对象，他们都会对应同一个Class对象，它表示正在运行程序中的类和接口。如何取得操作类的Class对象，常用的有三种方式：</p>
+<p>1.调用Class的静态方法forName，如上例；<br>2.使用类的.class语法，如：Class&lt;?&gt; cls = String.class；<br>3.调用对象的getClass方法，如：String str = “abc”；Class&lt;?&gt; cls = str .getClass()；</p>
+<ul>
+<li><p>Constructor类相关实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.waterjim.example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Modifier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstructorSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class reflectClass = Class.forName(<span class="string">"com.waterjim.example.ReflectSample"</span>);</span><br><span class="line">			Constructor[] constructors = reflectClass.getConstructors();</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; constructors.length; index++) &#123;</span><br><span class="line">				<span class="comment">//构造函数的名字</span></span><br><span class="line">				System.out.println(<span class="string">"Constructor "</span> + index + <span class="string">" : "</span> + constructors[index].getName());</span><br><span class="line">				<span class="comment">//构造函数的访问权限</span></span><br><span class="line">				System.out.println(<span class="string">"Constructor Modifier : "</span> + Modifier.toString(constructors[index].getModifiers()));</span><br><span class="line">				<span class="comment">// 获取构造方法中的参数</span></span><br><span class="line">				Class[] paramTypes = constructors[index].getParameterTypes(); </span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; paramTypes.length; i++) &#123;</span><br><span class="line">					<span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">						System.out.print(<span class="string">","</span>);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (paramTypes[i].isArray()) &#123;</span><br><span class="line">						System.out.println(paramTypes[i].getComponentType().getName() + <span class="string">"[]"</span>);</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						System.out.print(paramTypes[i].getName());</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.println(<span class="string">"---------------------------------------------------"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Field类相关实例</p>
+</li>
+<li><p>Method类相关实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.waterjim.example;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Modifier;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class reflectClass = Class.forName(<span class="string">"com.waterjim.example.ReflectSample"</span>);</span><br><span class="line">			<span class="comment">// 获取指定类的所有方法</span></span><br><span class="line">			<span class="comment">// 注意：这里使用的是 getDeclaredMethods(), 还有一个 getMethods(),</span></span><br><span class="line">			<span class="comment">// 但是后者不能获取声明为private的方法</span></span><br><span class="line">			Method[] methods = reflectClass.getDeclaredMethods();</span><br><span class="line">			<span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">				System.out.println(<span class="string">"Method name : "</span> + method.getName());</span><br><span class="line">				System.out.println(<span class="string">"Method modifier : "</span> + Modifier.toString(method.getModifiers()));</span><br><span class="line">				<span class="comment">// 获取构造方法中的参数</span></span><br><span class="line">				Class[] paramTypes = method.getParameterTypes(); </span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; paramTypes.length; i++) &#123;</span><br><span class="line">					<span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">						System.out.print(<span class="string">","</span>);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (paramTypes[i].isArray()) &#123;</span><br><span class="line">						System.out.println(paramTypes[i].getComponentType().getName() + <span class="string">"[]"</span>);</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						System.out.print(paramTypes[i].getName());</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println();</span><br><span class="line">				System.out.println(<span class="string">"---------------------------------------------------"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</div>
 
             
 <nav class="post-nav flex-row">
